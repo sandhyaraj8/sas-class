@@ -5,3 +5,6 @@
 * Understanding SAS DataSet, Data, Metadata
 * Examining Raw data
 * Saving, deleting and Executing a sas program
+
+### Quiz Answers
+* 1 =  3 obs, 5 vars
