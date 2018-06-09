@@ -19,10 +19,42 @@ run;
 libname raw102 "~/AG102/data/raw";
 
 data work.demog;
-  set raw102.demographics; #it is going to read frm "set" and put in work.demog
+  set raw102.demographic; 
   
-  if trt=0 then trtc = "Placebo"
-  else if trt=1 then trtc = "Placebo"
-  else PUT "Warning: TRT variable has different value=" trt=
+  if trt=0 then trtc = "Placebo";
+  else if trt=1 then trtc = "Active";
+  else PUT "Warning: TRT variable has different value=" trt= ;
 run;  
+```
+
+## Keeping variables
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data work.demog;
+  set raw102.demographic; 
+  
+  if trt=0 then trtc = "Placebo";
+  else if trt=1 then trtc = "Active";
+  else PUT "Warning: TRT variable has different value=" trt= ;
+  
+  KEEP uniqueid trt trtc
+run;  
+```
+
+## DROP Variables
+* It drops those variables ONLY in output dataset
+
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data work.demog;
+  set raw102.demographic; 
+  
+  if trt=0 then trtc = "Placebo";
+  else if trt=1 then trtc = "Active";
+  else PUT "Warning: TRT variable has different value=" trt= ;
+  
+  DROP uniqueid dob randdt
+run; 
 ```
