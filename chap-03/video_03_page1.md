@@ -33,3 +33,25 @@ by orace;
 run;
 ```
 
+#### PROC Freq
+* Say we want to see frequency (ie count) by another variable
+* How many patients are Placebo or Active
+* Notice cross-tabulation using * and it generates the freuqency output to a `new dataset `
+
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data demog;
+    set raw102.demographic;
+    keep subject trt gender;
+run;
+
+proc freq data= demog;
+    table trt * gender / out= freq;
+run;
+```
+#### PROC Means
+* To calculate Mean
+* Notice 01Jan1960 is Day 0 in Sas Date Object, whihcis equivalent to 0 int value
+
+
