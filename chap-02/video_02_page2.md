@@ -28,7 +28,7 @@ data work.demog;
 run;
 ```
 
-![PDV Image](Capture_PDV_chap02.PNG)
+![PDV Image](Capture_PDV_chap02_a.PNG)
 
 ## Compilation & Execution Phase
 * During Compilation 3 things happen
