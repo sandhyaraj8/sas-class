@@ -20,3 +20,14 @@
 * Each Subjectid will have LabTest+LabCategory Names, and test units along with Range (ie., LOW/HIGH) along with LABdate (when it was run)
 #### Pain Dataset
 * For Each Subjectid, it capture datr at 3 different time-points (randomDT, 3MonthDT, 6MonthDT) randomDT is base or start Date, and Label show how severse the pain was
+
+### Save Program in EG
+* ~=brings to Home Dir whihc is "Files" the  Folder-Name you see in Sas EG studio
+```bash
+libname sdtm102 "~/AG102/data/sdtm" 
+```
+* Either save in local or Server itslef - pref is `store in server`
+* Say: you save to Files/exercise/lession1/ex1.sas
+### Save Program in Sas Studio
+* Once you save in Sas EG, you can pull SAME file Files/exercise/lession1/ex1.sas
+
