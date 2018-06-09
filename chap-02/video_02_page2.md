@@ -29,3 +29,13 @@ run;
 ```
 
 ![PDV Image](Capture_PDV_chap02.PNG)
+
+## Compilation & Execution Phase
+* During Compilation 3 things happen
+  * check syntax, (trtc is derived variable)
+  * create PDV (PDV holds one row in memory, as sas processes one row at a time)
+  * Create output Metadata (variable label, type, name, format/informat etc.,)
+ * During Execution Phase
+  * takes one obs to PDV
+  * "_N_" = 1, for first row (index)
+  * "_ERROR_" will be 0 or 1 based on input error or not
