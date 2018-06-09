@@ -6,5 +6,7 @@
 * Examining Raw data
 * Saving, deleting and Executing a sas program
 
+* [Excercise & Quiz](https://drive.google.com/open?id=1fJYBS8_MKBI3asS-T2CVA5XkFwLCIMMy)
+
 ### Quiz Answers
 * 1 =  3 obs, 5 vars
