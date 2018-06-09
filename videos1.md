@@ -31,10 +31,19 @@
 * ! Folder is physical location, Libraries is logical connection 
 #### PROC Print and Contents
 
-* to view raw data content, execute 
+* to view RAW-data content in "results" tab, execute 
 ```bash
 libname raw102 "/blah/data/raw"
 
 proc print data = raw102.demographic;
 run;
 ```
+* to view METADATA-data content in "results" tab, execute (diff is "contents" instead of "print")
+```bash
+libname raw102 "/blah/data/raw"
+
+proc contents data = raw102.demographic;
+run;
+```
+* It gives VERY detailed info like data-types, count of abs and variables, sorted etc.,
+
