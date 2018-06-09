@@ -2,6 +2,9 @@
 * To Manipute DataSet (aka Transformation) we use DataSet Programming
 * We do not manipulate orginal (aka source) dataset
 * we bring into work-library before creating new-DataSet. 
+
+### Keep/Drop statement allows to keep/drop Vars in output-dataset
+
 #### work-library 
 * is TEMP library gets deleted at end-session
 * it is going to read frm "set" and put in work.demog
