@@ -27,3 +27,5 @@ data work.demog;
   else PUT "Warning: TRT variable has different value=" trt= ;
 run;
 ```
+
+![PDV Image](Capture_PDV_chap02.PNG)
