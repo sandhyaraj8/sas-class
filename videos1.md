@@ -29,4 +29,12 @@
 * example LIBNAME raw102 "/home/blah/data/raw" creates logical name and execute
 * Navigate to "Libraries" in studio you see a NODe called "RAW102"
 * ! Folder is physical location, Libraries is logical connection 
-  
+#### PROC Print and Contents
+
+* to view raw data content, execute 
+```bash
+libname raw102 "/blah/data/raw"
+
+proc print data = raw102.demographic;
+run;
+```
