@@ -17,3 +17,16 @@
 * Expand "SasApp" whihc opens same cloud app files
 * To run a sas program, say ~/AG102/prog/adtm/dm.SAS, run as run or Run-selection
 * Notice below  `statusbar` it shows cloud connected and current status of programs execution status
+#### Creating SDTM and ADAM datasets
+* From SEGuide navigate to Servers /AG102/programs/sdtm/dm.sas
+* goto output dir to see data of dm.sas into /AG102/data/sdtm/dm.sas
+* repeat ae,ds,ex,lb,tdm,xp.sas into /AG102/data/sdtm/* (ignore alert pop-up, ok) - notice for "error/warning/notes" window
+* repeat for "adam", into /AG102/data/sdtm/* 
+* adsl.sas should be FIRST in adam and come to adam only after sdtm!
+#### Creating Library
+* Our raw data is  in AG102/data/raw
+* ! to view/render raw data in studio, we should create a "link" uisng LIBNAME stmt
+* example LIBNAME raw102 "/home/blah/data/raw" creates logical name and execute
+* Navigate to "Libraries" in studio you see a NODe called "RAW102"
+* ! Folder is physical location, Libraries is logical connection 
+  
