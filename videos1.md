@@ -65,3 +65,5 @@ run;
 * RANDDT is the date when TRT wa assigned/applied for Subjects
 ##### Dosing data
 * Each Subject will have start+end date and DailyDose count, notice it has other normalized columns like mm, dd, year for start+end
+##### LABS has LabTest data
+* Each Subjectid will have LabTest+LabCategory Names, and test units along with Range (ie., LOW/HIGH) along with LABdate (when it was run)
