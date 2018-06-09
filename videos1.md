@@ -47,3 +47,6 @@ run;
 ```
 * It gives VERY detailed info like data-types, count of abs and variables, sorted etc.,
 
+#### Understanding Raw Data
+* To look at rawdata, we need to create library, instead we run init.sas, this creates Libraries
+* We are interested in "RAW102" library (after refresh i nNavigate bar)
