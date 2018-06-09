@@ -39,3 +39,33 @@ run;
   * takes one obs to PDV
   * "_N_" = 1, for first row (index)
   * "_ERROR_" will be 0 or 1 based on input error or not
+
+## IF vs WHERE (output statement)
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data work.male work.female;
+  set raw102.demographic; 
+  
+  if gender=1 then output work.male;
+  if gender=2 then output work.female;
+run; 
+```
+
+* "if" is changed to "where"
+* "IF" is applied on PDV, "where" is NOT
+" Where is more-effecient than IF because it reads from input-buffer, before going to PDV
+
+## Statement vs Option
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data 
+  work.male (keep= subject trt dob) 
+  work.female (keep= subject trt randdt);
+  set raw102.demographic; 
+  
+  if gender=1 then output work.male;
+  if gender=2 then output work.female;
+run; 
+```
