@@ -4,7 +4,7 @@
 * example: Note: noobs-removes Obs seqid column from results, label keyword in print says, label names are same as variable names
 
 #### PROC Print
-```bash
+```sas
 libname raw102 "~/AG102/data/raw";
 
 proc
