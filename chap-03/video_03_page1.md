@@ -7,8 +7,7 @@
 ```sas
 libname raw102 "~/AG102/data/raw";
 
-proc
-    print data=raw102.demographic noobs label;    
+proc print data=raw102.demographic noobs label;    
     var subject trt dob;
     where trt=1;
     
