@@ -51,7 +51,36 @@ proc freq data= demog;
 run;
 ```
 #### PROC Means
-* To calculate Mean
-* Notice 01Jan1960 is Day 0 in Sas Date Object, whihcis equivalent to 0 int value
+* To calculate Mean, on a continuous-variable
+* Notice 01Jan1960 is Day 0 in Sas Date Object, which is equivalent to 0 int value
+* Notice: in format line below only variable name is specified, but format pattern is missing, that makes sas to apply best-for-numeric
+    * so the randdt, dob are displayed as int-values and not as mm/dd/yyyy display format earlier (by default)
+* notice in metadata type in results-tab the format value is "empty" before that it shows "MMDDYY10" as format
 
+* nway removes the total classification type from proc output DS
+* class (categorial variable) trt gives measn group-by trt ie., 0 and 1
+* output is the one taking the proc result to ds name
 
+```bash
+libname raw102 "~/AG102/data/raw";
+
+data dt;
+    dt1='01Jan1960'd;   
+run;
+
+data demog;
+    set raw102.demographic;
+    age = (randdt - dob)/365.25;
+    keep subject trt age randdt dob;
+    
+    format randdt;
+    format dob;
+run;
+
+proc means data= demog nway;
+    var age;
+    class trt;
+    output out=stats;
+    
+run;
+```
