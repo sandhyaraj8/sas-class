@@ -19,3 +19,18 @@ var age;
 run;
 ```
 
+## PROC report
+* Helps to convert DS to a report format for display/printable  needs
+* note: append below code to previous-transponse code
+
+```bash
+PROC report data=tstats;
+columns _stat_ col_0 col_1;
+
+define _stat_ / "Statistics";
+define col_0  / "Placebo";
+define col_1  / "Active";
+
+run;
+```
+
