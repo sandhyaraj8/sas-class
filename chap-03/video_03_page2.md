@@ -5,6 +5,8 @@
 * ! when "by" stmt i sused, make sure those variables are already sorted out , else you get ERROR (below example is _stat_)
 * note: append below code to previous-means code
 
+![transponse example](Capture_transponse_chap03_1.PNG)
+
 ```bash
 proc sort data=stats;
 by DESCENDING _stat_;
