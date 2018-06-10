@@ -16,7 +16,7 @@ run;
 ```
 
 #### PROC Sort
-```bash
+```sas
 libname raw102 "~/AG102/data/raw";
 
 proc sort data=raw102.demographic 
@@ -35,7 +35,7 @@ run;
 * How many patients are Placebo or Active
 * Notice cross-tabulation using * and it generates the freuqency output to a `new dataset `
 
-```bash
+```sas
 libname raw102 "~/AG102/data/raw";
 
 data demog;
@@ -58,7 +58,7 @@ run;
 * class (categorial variable) trt gives measn group-by trt ie., 0 and 1
 * output is the one taking the proc result to ds name
 
-```bash
+```sas
 libname raw102 "~/AG102/data/raw";
 
 data dt;
