@@ -19,14 +19,12 @@ run;
 ```bash
 libname raw102 "~/AG102/data/raw";
 
-proc sort 
-    data=raw102.demographic 
+proc sort data=raw102.demographic 
     out=work.demog1 (keep= subject trt);    
     by descending trt;
 run;
 
-proc sort 
-    data=raw102.demographic 
+proc sort data=raw102.demographic 
     out=work.demog1 (keep= orace) nodupkey;    
 by orace;
 run;
