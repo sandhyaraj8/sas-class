@@ -7,3 +7,5 @@ We learn about these PROC stmts,
 * PROC MEANS
 * PROC TRANSPONSE
 * PROC REPORT
+
+[Exercise and Quiz Link](https://drive.google.com/open?id=1eTL51tmZouPdxk8Wq2XwSyZ5bz_slpse)
