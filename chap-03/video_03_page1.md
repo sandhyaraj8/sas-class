@@ -4,7 +4,7 @@
 * example: Note: noobs-removes Obs seqid column from results, label keyword in print says, label names are same as variable names
 
 #### PROC Print
-
+```sas
 libname raw102 "~/AG102/data/raw";
 
 proc
@@ -14,6 +14,7 @@ proc
     
     label subject = "Subject Indentifier";
 run;
+```
 
 #### PROC Sort
 ```bash
