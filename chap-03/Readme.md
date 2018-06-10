@@ -10,4 +10,4 @@ We learn about these PROC stmts,
 
 [Exercise and Quiz Link](https://drive.google.com/open?id=1eTL51tmZouPdxk8Wq2XwSyZ5bz_slpse)
 
-![file list name](Capture_file_list_01.PNG)
+<!-- ![file list name](Capture_file_list_01.PNG) -->
