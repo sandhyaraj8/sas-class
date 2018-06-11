@@ -100,6 +100,14 @@ order =input (_name_, stats.); *order statement to keep the statistics in same o
 parameter = put ( order,stats.);
 run;
 
+title,footnote;
+proc report data =prefinal nowd headline headskip split="|";
+column order parameter col1;
+define order / order order=internal;
+define parameter / display "statistics";
+define col1 / display "Month 3|pain score";
+run;
+
 
 /*define informat*/
  
