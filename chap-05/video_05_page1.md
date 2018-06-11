@@ -5,6 +5,8 @@
 * Format tells sas how to write a data.
 *  To convert a numeric or character value into another character value.
 
+sas defined formats:
+
 ```sas
 proc print data =raw102.avderde;
 var subject bodysys prefterm aestart;
@@ -21,3 +23,4 @@ ser raw102.adverse;
 format aestart mmddyy10.;
 run;
 ```
+sas defined informats:
