@@ -8,5 +8,7 @@
 ```sas
 proc print data =raw102.avderde;
 var subject bodysys prefterm aestart;
+foramt aestart date9.;
+*format aestart mmddyy10.;
 run;
 ```
