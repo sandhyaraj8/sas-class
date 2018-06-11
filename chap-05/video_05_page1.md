@@ -10,13 +10,13 @@ sas defined formats:
 ```sas
 proc print data =raw102.avderde;
 var subject bodysys prefterm aestart;
-foramt aestart date9.;
+format aestart date9.;
 *format aestart mmddyy10.;
 run;
 ```
 * sas defined date  formats should be attached to a variable to re present in more meaningful way in output data set. 
 But internal value of date variable is still in days. if we change in proc, it only attaches temporarily.
-if we want to apply  format permanamtly to a variable, we need to do itin a data step. 
+if we want to apply  format permanently to a variable, we need to do it in a data step. 
 
 ```sas
 data adverse;
@@ -25,7 +25,7 @@ format aestart mmddyy10.;
 run;
 ```
 sas defined informats:
-Informat helpd sas to read data properly.
+Informat helps sas to read data properly.
 
 ```sas
 data dt:
@@ -44,14 +44,14 @@ On the input function, we use informat.  That is going to convert a character va
 * to do a numeric to character conversion, we need a format. A format is defined by using "value" statement.
 The formats are used on a "put" function which will return the value based on what is stored in "order" variable and that will get stored in "parameter" variable.
 * inforamt, invalue statement, input function use it together.
-* foramt value statment put function use it together.
+* foramt, value statment, put function use it together.
  
  ### find out summary statistics of all patients who reported pain at month 3. 
- and re present summary statistics  show vertically not in default horizontally.
+ and re present summary statistics  show vertically not in default horizontally to show like the below.
   * n
-  * Mean(STD) concatenated
+  * Mean(STD) (concatenated)
   * Median
-  * Min, Max concatenated
+  * Min, Max (concatenated)
 
 
 ```sas
@@ -79,13 +79,13 @@ proc transpose data = stats1 out =tstats1;
 var nc meanstd meadianc minmax;
 run;
 proc format; /*new procedure*/
-invalue stats / * create informat and name it as stats*/
+invalue stats /*create informat and name it as stats*/
 "NC"=1
 "meanstd" =2
 "medianc" =3
 "minmax" = 4;
 
-value stats
+value stats /* create format to tell sas to show/display stuff. u can use same name as "stats"*/
 1= "N"
 2 ="Mean (STD)"
 3 = "Median"
@@ -96,14 +96,14 @@ run;
 /* define informat*/
 data prefinal;
 set tstats1;
-order =input (_name_, stats.); *order statement to keep the statistics in same order
-parameter = put ( order,stats.);
+order =input (_name_, stats.); /*order statement to keep the statistics in same order*/
+parameter = put ( order,stats.); /* put fn helps us to apply a format to a variable and assign its value to another variable it this case from order variable, stats value gets captured in parameter variable*/
 run;
 
 title,footnote;
-proc report data =prefinal nowd headline headskip split="|";
+proc report data =prefinal nowd headline headskip split="|"; /* no sepearate window nowd, split the variable name using | */
 column order parameter col1;
-define order / order order=internal;
+define order / order order=internal no print;
 define parameter / display "statistics";
 define col1 / display "Month 3|pain score";
 run;
