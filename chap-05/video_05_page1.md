@@ -69,7 +69,7 @@ run;
 data stats1;
 ser stats;
 nc= strip(put(n,5.));
-meanstd = strip (put(mean,5.1)) ||"  ('||strip(put(std,6.2)) ||")";
+meanstd = strip (put(mean,5.1)) ||"  ("||strip(put(std,6.2)) ||")";
 medianc = strip(put(median,5.1));
 minmax =strip(put(min,5.)) ||", " || strip (put(max,5.));
 keep nc meanstd medianc minmax;
