@@ -1,4 +1,4 @@
-### Introduction
+### Introduction Formats and Informats
 * Informat tells sas how to read data and raw data. 
 * It converts character value to numeric values.
 
