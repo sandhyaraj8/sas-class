@@ -44,3 +44,32 @@ On the input function, we use informat.  That is going to convert a character va
 The formats are used on a "put" function which will return the value based on what is stored in "order" variable and that will get stored in "parameter" variable.
 * inforamt, invalue statement, input function use it together.
 * foramt value statment put function use it together.
+ 
+ ### find out summary statistics of all patients who reported pain at month 3. 
+ and re present summary statistics  show vertically not in default horizontally.
+  * n
+  * Mean(STD) concatenated
+  * Median
+  * Min, Max concatenated
+
+
+```sas
+proc means data =raw102.pain nway;
+var pain3mo;
+output out =stats n=n mean=mean std=std min=mim max=max median =median;
+run;
+/*
+*attach these values together and bring in this vertical form and transpose the DS.  take the data set and convert each statistcs into character.. bcoz character variable allows concatenate. 
+* Use put fn and sas defined format 5.  -----. and strip function to take away extra spaces.
+* use put fn and sas defined format 5.1 ----.- and strip function to take away extra spaces.
+* use put fn and sas defined format 6.2 ----.--  and strip function to take away extra spaces.
+* use || to concatenate
+*/
+data stats1;
+ser stats;
+nc= strip(put(n,5.));
+meanstd = strip (put(mean,5.1)) ||"  ('||strip(put(std,6.2)) ||")";
+medianc = strip(put(median,5.1));
+minmax =strip(put(min,5.)) ||", " || strip (put(max,5.));
+keep nc meanstd medianc minmax;
+run;
