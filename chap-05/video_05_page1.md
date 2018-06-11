@@ -8,7 +8,7 @@
 sas defined formats:
 
 ```sas
-proc print data =raw102.avderde;
+proc print data =raw102.adverse;
 var subject bodysys prefterm aestart;
 format aestart date9.;
 *format aestart mmddyy10.;
@@ -20,7 +20,7 @@ if we want to apply  format permanently to a variable, we need to do it in a dat
 
 ```sas
 data adverse;
-ser raw102.adverse;
+set raw102.adverse;
 format aestart mmddyy10.;
 run;
 ```
@@ -33,7 +33,8 @@ input patno bthdt date9.; *informat
 format bthdt mmddyy10.;
 datalines;
 100 1JAN1960
-101 5JAN1960;
+101 5JAN1960
+;
 run;
 ```
 
@@ -64,26 +65,30 @@ run;
 * Use put fn and sas defined format 5.  -----. and strip function to take away extra spaces.
 * use put fn and sas defined format 5.1 ----.- and strip function to take away extra spaces.
 * use put fn and sas defined format 6.2 ----.--  and strip function to take away extra spaces.
-* use || to concatenate
+* use || to concatenation
 */
+
 data stats1;
-ser stats;
-nc= strip(put(n,5.));
-meanstd = strip (put(mean,5.1)) ||"  ("||strip(put(std,6.2)) ||")";
-medianc = strip(put(median,5.1));
-minmax =strip(put(min,5.)) ||", " || strip (put(max,5.));
-keep nc meanstd medianc minmax;
+ set stats;
+  nc= strip (put(n,5.));
+  meanstd = strip (put(mean,5.1)) || "(" ||strip(put(std,6.2)) || ")";
+  medianc = strip(put(median,5.1));
+  minmax = strip(put(min,5.)) || ", " || strip(put(max,5.));
+  keep nc meanstd medianc minmax;
 run;
+/* convert the existing variables into observations* and  use order variable to keep in the same order/
 
 proc transpose data = stats1 out =tstats1;
-var nc meanstd meadianc minmax;
+var nc meanstd medianc minmax;
 run;
+
 proc format; /*new procedure*/
-invalue stats /*create informat and name it as stats*/
-"NC"=1
-"meanstd" =2
-"medianc" =3
-"minmax" = 4;
+ invalue stats /*create informat and name it as stats*/
+ "NC" = 1 /*getting a dot in the output??????????*/
+ "meanstd" =2
+ "medianc" =3
+ "minmax" = 4;
+run;
 
 value stats /* create format to tell sas to show/display stuff. u can use same name as "stats"*/
 1= "N"
