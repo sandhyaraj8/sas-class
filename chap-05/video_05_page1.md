@@ -91,9 +91,9 @@ set tstats1;
 order =input (_name_, stats.); *order statement to keep the statistics in same order
 parameter = put ( order,stats.);
 run;
-run;
+
 
 /*define informat*/
-data 
+ 
 
 ```
