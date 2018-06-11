@@ -38,7 +38,8 @@ run;
 
 ##user defined formats and informats:
 
-* to create a user defined informat, we use "invalue" statement. To apply that informat, we use "input" function. On the input function, we use informat.  That is going to convert a character value into numeric value.
+* to create a user defined informat, we use "invalue" statement. To apply that informat, we use "input" function. 
+On the input function, we use informat.  That is going to convert a character value into numeric value.
 * to do a numeric to character conversion, we need a format. A format is defined by using "value" statement.
 The formats are used on a "put" function which will return the value based on what is stored in "order" variable and that will get stored in "parameter" variable.
 * inforamt, invalue statement, input function use it together.
