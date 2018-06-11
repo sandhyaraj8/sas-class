@@ -3,5 +3,5 @@
 * It converts character value to numeric values.
 
 *Format tells sas how to write a data.
-*to convert a numeric or character value into another character value.
+*  To convert a numeric or character value into another character value.
 
