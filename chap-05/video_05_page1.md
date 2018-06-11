@@ -35,6 +35,7 @@ datalines;
 100 1JAN1960
 101 5JAN1960;
 run;
+```
 
 ## user defined formats and informats:
 
@@ -73,5 +74,26 @@ medianc = strip(put(median,5.1));
 minmax =strip(put(min,5.)) ||", " || strip (put(max,5.));
 keep nc meanstd medianc minmax;
 run;
+
+proc transpose data = stats1 out =tstats1;
+var nc meanstd meadianc minmax;
+run;
+proc format; *new procedure
+invalue stats * create informat and name it as stats
+"NC"=1
+"meanstd" =2
+"medianc" =3
+"minmax" = 4:
+run;
+/* define informat*/
+data prefinal;
+set tstats1;
+order =input (_name_, stats.); *order statement to keep the statistics in same order
+parameter = put ( order,stats.);
+run;
+run;
+
+/*define informat*/
+data 
 
 ```
