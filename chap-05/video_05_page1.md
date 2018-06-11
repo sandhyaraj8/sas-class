@@ -36,7 +36,7 @@ datalines;
 101 5JAN1960;
 run;
 
-##user defined formats and informats:
+## user defined formats and informats:
 
 * to create a user defined informat, we use "invalue" statement. To apply that informat, we use "input" function. 
 On the input function, we use informat.  That is going to convert a character value into numeric value.
@@ -73,3 +73,5 @@ medianc = strip(put(median,5.1));
 minmax =strip(put(min,5.)) ||", " || strip (put(max,5.));
 keep nc meanstd medianc minmax;
 run;
+
+```
