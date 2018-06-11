@@ -78,8 +78,8 @@ run;
 proc transpose data = stats1 out =tstats1;
 var nc meanstd meadianc minmax;
 run;
-proc format; *new procedure
-invalue stats * create informat and name it as stats
+proc format; /*new procedure*/
+invalue stats / * create informat and name it as stats*/
 "NC"=1
 "meanstd" =2
 "medianc" =3
