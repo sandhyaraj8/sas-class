@@ -83,8 +83,16 @@ invalue stats * create informat and name it as stats
 "NC"=1
 "meanstd" =2
 "medianc" =3
-"minmax" = 4:
+"minmax" = 4;
+
+value stats
+1= "N"
+2 ="Mean (STD)"
+3 = "Median"
+4 = "Min, Max";
 run;
+
+
 /* define informat*/
 data prefinal;
 set tstats1;
