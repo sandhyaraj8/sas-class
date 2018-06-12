@@ -1,4 +1,4 @@
-###Formats Catalog (saving permanemtly in catalogs)
+### Formats Catalog (saving permanemtly in catalogs)
 
 * Formats and informats are stored in catalogs. Catalogs are stored in work library by default. 
 * To save permanently by assigning lib= statement.
