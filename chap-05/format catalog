@@ -1,7 +1,8 @@
 ###Formats Catalog
 
-*Formats and informats are stored in catalogs. Catalogs are stored in work library by default. 
-*To save permanently by assigning lib= statement. SAS look first into work lib. need to tell sasto add lib in fmt search path.
+* Formats and informats are stored in catalogs. Catalogs are stored in work library by default. 
+* To save permanently by assigning lib= statement.
+* SAS look first into work lib. need to tell sasto add lib in fmt search path.
 
 ``` sas
 option fmtsearch=(wor fmt102);
