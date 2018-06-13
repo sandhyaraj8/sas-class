@@ -8,7 +8,7 @@
 option fmtsearch=(work fmt102);
 proc format lib =fmt102;
 invalue stats
-  NC" = 1
+  "NC" = 1
  "MEANSTD" = 2
  "MEDIANC" = 3
  "MINMAX" =  4;
