@@ -94,6 +94,44 @@ run;
 ```sas
 data prefinal;
 set tstats1;
-order = input(_name, stats.);
+order = input(_name_, stats.);
+parameter = input(order, stats.);
 run;
+```
+
+* written above to add new format-for-display
+
+```sas
+proc format;
+invalue stats
+"nc"=1
+"meanstd"=2
+"medianc"=3
+"minmax"=4
+;
+
+value stats
+1="N"
+2="Mean (STD)"
+3="Median"
+4="Min,Max"
+;
+run;
+```
+
+* we wil use "report" to render a report
+
+```sas
+proc report dta=prefinal nowd headline headskip split="|";
+column order parameter col1;
+define order / order order=internal noprint;
+define parameter /display "statistics";
+define col1 / display "Month 3| Pain Score";
+run;
+```
+
+* Baically we create informat using "invalue" to apply this informat to variable=name we use input(_name, stats.)
+* to create            format using "value" stmt to apply this format on some-data we use put and assign to parameter variable
+
+
 ```
