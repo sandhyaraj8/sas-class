@@ -1,6 +1,6 @@
 ## Format Catalog
 * User defined Fomats+Informats are stored in "catalogs" and catalogs are stored in work-library having session life scope
-* Notice below, how change in first line wit hlib= puts infomat+format into fmt102-catalog and not int owork catalog
+* Notice below, how change in first line with lib= puts infomat+format into fmt102-catalog and not int owork catalog
 
 ```sas
 *proc format;
