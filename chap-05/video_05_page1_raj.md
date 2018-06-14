@@ -38,6 +38,8 @@ datalines;
 101 05Jan1960
 ;
 run;
+* notice strip removes leading-spaces example 5.2 of "59" data there wil be "3spaces+59.xx" so strip fn (actually trims it)
+* Notice how mean value of 1.8309etc., gets rendered as 1.8 only !! because of 5.1
 ```
 
 ## User defined Formats and Informats
@@ -66,5 +68,32 @@ data stats1;
   meanstd = strip( put(mean,5.) )  || "(" || strip( put(std,6.2) ) || ")";
   
   keep nc meanstd;
+run;
+```
+* we will transponse to make starts names to columns
+
+```sas
+proc transponse dta=stats out=tstats;
+var nc meanstd meadinc minmax;
+run;
+```
+* we will create our own format now caled "stats." (also called User defined format!)
+```sas
+proc format;
+invalue stats
+"nc"=1
+"meanstd"=2
+"medianc"=3
+"minmax"=4
+;
+run;
+```
+
+* now we are applying above UD-format
+
+```sas
+data prefinal;
+set tstats1;
+order = input(_name, stats.);
 run;
 ```
