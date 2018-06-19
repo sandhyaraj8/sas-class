@@ -1,0 +1,5 @@
+/*Macro is defined and amcro variabled are defined. how internally sas processes macro.
+%let statement, macro processor witll create a macro variable name=sandhya then store it in a 
+global symbol table. If u have &name anywhere in the code macro processor will replace it with sandhya value.
+
+%macro statement, macro processor will store in a sas macro catalog and invoked by %nameof the macro.xpt*/
