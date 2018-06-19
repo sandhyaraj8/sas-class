@@ -1,3 +1,5 @@
+```sas
+
 *Macro Variable;
 *Automatic Macro variable;
 %put _automatic_;
