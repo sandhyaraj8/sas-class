@@ -36,7 +36,7 @@ select dm;
 run;
 
 %macro create_xpt (dsname=);
-libname sasxpt xport "~/AG102/data/sdtmxpt/&dsname..xpt"; * we need 2 dotsin order to get dsname properly with .xpt;
+libname sasxpt xport "~/AG102/data/sdtmxpt/&dsname..xpt"; /* we need 2 dots in order to get dsname properly with .xpt, unless there is space in b/w .xpt*/
 proc copy in=work out=sasxpt;
 select &dsname;
 run;
