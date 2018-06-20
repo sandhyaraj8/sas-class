@@ -1,0 +1,12 @@
+%let fname = John;
+
+%macro child;
+    %let fname = Micheal;
+%mend;
+
+%macro parent (fname, lname=Jordan);
+    %let fname = Smith;
+    %child;
+    %put &fname &lname;
+ %mend;
+ %parent (&fname);
