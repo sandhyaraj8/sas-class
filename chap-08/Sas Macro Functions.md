@@ -7,7 +7,7 @@ data operation;
  divide ='/';
  subtract='-';
  
- call symputx('operator' , sum);
+ call symputx('operator' , sum); * to convert data step varible "sum" value into macro varibale "operator";
  run;
  
  %macro arithmetic (variable1,variable2, operator);
