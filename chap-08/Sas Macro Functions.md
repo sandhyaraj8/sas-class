@@ -16,7 +16,7 @@ data operation;
   %mend;
   %put %arithmetic (1,2, &operator);
   
- / * %let result = %sysevalf(&variable1 &operator &variable2);
-   %put %arithmetic (1.2,2.1, &operator); for decimal, we need %sysevalf function*/
+ /* %let result = %sysevalf(&variable1 &operator &variable2);
+   %put %arithmetic (1.2,2.1, &operator); for decimal, we need %sysevalf functio n*/
    ```
   
