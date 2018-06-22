@@ -1,4 +1,4 @@
-``` sas
+```sas
 %let p=proc print data =DSN; run;;
 %put &p;
 
@@ -74,4 +74,4 @@ data client;
  %mend;
  %client3;
  
- 
+ ```
